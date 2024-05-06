@@ -1,7 +1,7 @@
 export const timestamp = () => +Date.now()
 
 export function dateFormat(input: string | Date, format = 'yyyy-MM-dd hh:mm:ss') {
-  const d = typeof input === 'string' ? new Date(input) : input  
+  const d = typeof input === 'string' ? new Date(input) : input
   const year = d.getFullYear()
   const month = d.getMonth() + 1
   const date = d.getDate()
