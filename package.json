@@ -1,0 +1,68 @@
+{
+  "name": "@fxzer/utils",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.15.8",
+  "description": "Opinionated collection of common JavaScript / TypeScript utils by @fxzer",
+  "author": "fxzer",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/fxzer",
+  "homepage": "https://github.com/fxzer/utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxzer/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fxzer/utils/issues"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "nr build --watch",
+    "lint": "eslint .",
+    "lintf": "nr lint --fix",
+    "prepublishOnly": "nr build",
+    "release": "bumpp --commit --push --tag && npm publish",
+    "start": "esno src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.16.1",
+    "@antfu/ni": "^0.21.12",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/node": "^20.12.8",
+    "@types/throttle-debounce": "^5.0.2",
+    "bumpp": "^9.4.1",
+    "eslint": "npm:eslint-ts-patch@8.55.0-1",
+    "eslint-plugin-format": "^0.1.1",
+    "eslint-ts-patch": "8.55.0-1",
+    "esno": "^4.7.0",
+    "p-limit": "^5.0.0",
+    "rollup": "^4.17.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "throttle-debounce": "5.0.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
+  }
+}
