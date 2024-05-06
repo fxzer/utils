@@ -1,12 +1,13 @@
 export const timestamp = () => +Date.now()
 
-export function dateFormat(input: Date, format = 'yyyy-MM-dd hh:mm:ss') {
-  const year = input.getFullYear()
-  const month = input.getMonth() + 1
-  const date = input.getDate()
-  const hours = input.getHours()
-  const minutes = input.getMinutes()
-  const seconds = input.getSeconds()
+export function dateFormat(input: string | Date, format = 'yyyy-MM-dd hh:mm:ss') {
+  const d = typeof input === 'string' ? new Date(input) : input  
+  const year = d.getFullYear()
+  const month = d.getMonth() + 1
+  const date = d.getDate()
+  const hours = d.getHours()
+  const minutes = d.getMinutes()
+  const seconds = d.getSeconds()
 
   return format.replace('yyyy', year.toString())
     .replace('MM', month < 10 ? `0${month}` : month.toString())
