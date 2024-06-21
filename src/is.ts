@@ -11,6 +11,10 @@ export const isObject = (val: any): val is object => toString(val) === '[object 
 export const isRegExp = (val: any): val is RegExp => toString(val) === '[object RegExp]'
 export const isDate = (val: any): val is Date => toString(val) === '[object Date]'
 
+export const isMobile = ():boolean => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+export const isIphone = ():boolean => /iPhone/.test(navigator.userAgent )
+export const isSafari = ():boolean => /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent) // 判断是否Safari浏览器
+
 export const isWindow = (val: any): boolean => typeof window !== 'undefined' && toString(val) === '[object Window]'
 export const isBrowser = typeof window !== 'undefined'
 
