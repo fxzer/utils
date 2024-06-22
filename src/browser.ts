@@ -1,5 +1,3 @@
-// encodeURIComponent
-// decodeURIComponent
 /**
  * @description: 获取url参数
  * @param {string} url url地址
@@ -28,7 +26,7 @@ export function setQueryParams(params: Record<string, string>, replace = true, e
     acc[key] = encode ? encodeURIComponent(value) : value
     return acc
   }, {} as Record<string, string>)
-  
+
   const newParams = replace ? encodeParams : { ...searchParams, ...encodeParams }
   const newUrl = `${window.location.pathname}?${new URLSearchParams(newParams).toString()}`
   window.history.replaceState({}, '', newUrl)

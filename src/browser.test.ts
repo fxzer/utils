@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { getQueryParam, getUrlParams, setQueryParams } from './browser'
+import { getQueryParam, getUrlParams } from './browser'
 
 describe('getUrlParams', () => {
   it('should return url all query for a  obj', () => {
