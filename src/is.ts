@@ -15,10 +15,16 @@ export const isMobile = (): boolean => /Android|webOS|iPhone|iPad|iPod|BlackBerr
 export const isIphone = (): boolean => /iPhone/.test(navigator.userAgent)
 export const isSafari = (): boolean => /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent) // 判断是否Safari浏览器
 
+/*
+* 判断是否在客户端环境
+*/
+export const isClient = typeof window !== 'undefined' && typeof document !== 'undefined'
+
 /**
- * 判断是否在浏览器环境
+ * 判断是否在 Web Worker
  */
-export const isBrowser = typeof window !== 'undefined'
+export const isWorker = typeof WorkerGlobalScope !== 'undefined' && globalThis instanceof WorkerGlobalScope
+
 /**
  * 判断浏览器环境中是否有 window 对象
  */
