@@ -39,3 +39,12 @@ export const isWindow = (val: any): boolean => typeof window !== 'undefined' && 
 export function isTruthy<T>(v: T): v is NonNullable<T> {
   return Boolean(v)
 }
+
+/**
+ * 判断一个值是否是 Promise Like
+ */
+export function isPromiseLike(value: any): boolean {
+/*      return ( value !== null && (typeof value === 'object' || typeof value === 'function')
+     && typeof value.then === 'function' && typeof value.catch === 'function' ); */
+  return !isNull(value) && (isObject(value) || isFunction(value)) && isFunction(value.then) && isFunction(value.catch)
+}
